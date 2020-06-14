@@ -8,6 +8,7 @@ html, body {
     height: 100%;
     width: 100%;
     font-family: 'Muli', sans-serif;
+    background-color: rgb(133, 194, 196);
 }
 
 header {
@@ -84,6 +85,14 @@ nav {
 
 .nav-closed ul li{
     font-size: 20px;
+    padding: 5px;
+}
+
+
+.nav-closed ul li:hover{
+    background-color: rgb(119, 208, 212);
+    border-radius: 3px;
+    cursor: pointer;
 }
 
 .nav-open {
@@ -116,8 +125,16 @@ nav {
 }
 
 .gallery ul li {
-    padding-bottom: 10px;
+    padding: 10px;
+    text-align: center;
 }
+
+.gallery ul li:hover {
+    background-color: rgb(119, 208, 212);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
 .gallery ul li a{
     text-decoration: none;
     color: white;
