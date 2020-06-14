@@ -7,7 +7,7 @@
 html, body {
     height: 100%;
     width: 100%;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Bellota', cursive;
     background-color: rgb(133, 194, 196);
 }
 
@@ -17,6 +17,46 @@ header {
     
     display: flex;
 }
+
+.intro1 {
+    position: absolute;
+    z-index: 3;
+    width: 60%;
+    text-align: center;
+    right: 30px;
+    top: 25%;
+    opacity: 0;
+}
+
+
+.intro1 p{
+    color: rgb(252, 252, 252);
+    opacity: 0.9;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.intro2 {
+    position: absolute;
+    top: 30%;
+    left: 3%;
+    z-index: 3;
+    width: 30%;
+    opacity: 0;
+}
+
+.intro2 ul {
+    list-style: none;
+    color: white;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.intro2 ul li{
+    font-size: 30px;
+    padding: 20px;
+}
+
 
 .cover {
     position: absolute;
@@ -57,7 +97,7 @@ nav {
     color:white;
     width: 30%;
     height: 20%;
-    font-family: 'Bellota', cursive;
+    
 
 }
 

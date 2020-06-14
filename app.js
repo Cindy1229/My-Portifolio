@@ -1,8 +1,9 @@
 const navButton =document.querySelector('.nav-button');
 const navOpen=document.querySelector('.nav-open');
+const introButton=document.querySelector('.intro-button');
 
 //tweenlite.to(object, time, properties)
-
+//Gallery animations
 const tl=new TimelineLite({paused: true, reversed: true});
 tl.to('.cover',1,{
     width:'70%',
@@ -21,13 +22,34 @@ tl.to('.cover',1,{
     x: 0,
     onComplete: function(){
         navOpen.style.pointerEvents="auto";
-        console.log("done");
         
     }
 });
 
+//About animaton 1
+const tl2=new TimelineLite({paused: true, reversed: true});
 
-navButton.addEventListener('click', ()=>{
+tl2.to('nav', 0.5 ,{
+    height:'100%',
+    ease: Power2.easeOut
+})
+.fromTo('.intro1', 1, {
+    opacity: 0,
+    x:100
+},{
+    opacity: 0.9,
+    x: 0
+})
+.fromTo('.intro2', 1, {
+    opacity: 0,
+    x:-50
+},{
+    opacity: 0.9,
+    x: 0 
+}, "-=0.5")
+
+//Buttons
+navButton.addEventListener('click', (e)=>{
     if(tl.isActive()){
         e.preventDefault();
         e.stopImmediatePropagation();
@@ -35,6 +57,17 @@ navButton.addEventListener('click', ()=>{
     }
     tweenToggle(tl);
 })
+
+introButton.addEventListener('click', (e)=>{
+    if(tl2.isActive()){
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        return false;
+    }
+    tweenToggle(tl2);
+})
+
+
 
 
 function tweenToggle(tween) {
