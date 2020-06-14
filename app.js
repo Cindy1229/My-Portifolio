@@ -1,10 +1,12 @@
 const navButton =document.querySelector('.nav-button');
 const navOpen=document.querySelector('.nav-open');
 const introButton=document.querySelector('.intro-button');
+const contactButton=document.querySelector('.contact-button')
 
 
 var toggle1=false;
 var toggle2=false;
+var toggle3=false;
 
 //tweenlite.to(object, time, properties)
 //Gallery animations
@@ -48,15 +50,27 @@ tl2.fromTo('.intro1', 1, {
     x: 0 
 }, "-=0.5")
 
+
+//Contact animation
+const tl3=new TimelineLite({paused: true, reversed: true});
+tl3.to('.contact', 1, {
+    opacity: 0.9
+})
+
+
 //Buttons
 navButton.addEventListener('click', (e)=>{
     toggle1=!toggle1;
 
     if (toggle2){
-        console.log(toggle2);
         
         toggle2=tweenToggle(tl2, toggle2);
-        console.log(toggle2);
+        
+    }
+    
+    if (toggle3){
+        
+        toggle3=tweenToggle(tl3, toggle3);
         
     }
     if(tl.isActive()){
@@ -75,6 +89,11 @@ introButton.addEventListener('click', (e)=>{
         toggle1=tweenToggle(tl, toggle1);
         
     }
+    if (toggle3){
+        
+        toggle3=tweenToggle(tl3, toggle3);
+        
+    }
 
     if(tl2.isActive()){
         e.preventDefault();
@@ -83,6 +102,27 @@ introButton.addEventListener('click', (e)=>{
     }
     tweenToggle(tl2);
     
+})
+
+contactButton.addEventListener('click', (e)=>{
+    toggle3=!toggle3;
+    if (toggle1){
+        toggle1=tweenToggle(tl, toggle1);
+        
+    }
+    
+    if (toggle2){
+        
+        toggle2=tweenToggle(tl2, toggle2);
+        
+    }
+
+    if(tl3.isActive()){
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        return false;
+    }
+    tweenToggle(tl3);
 })
 
 
