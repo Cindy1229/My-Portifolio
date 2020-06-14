@@ -23,8 +23,8 @@ header {
     z-index: 3;
     width: 60%;
     text-align: center;
-    right: 30px;
-    top: 25%;
+    right: 1%;
+    top: 30%;
     opacity: 0;
 }
 
@@ -33,7 +33,7 @@ header {
     color: rgb(252, 252, 252);
     opacity: 0.9;
     font-size: 30px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .intro2 {
@@ -54,7 +54,8 @@ header {
 
 .intro2 ul li{
     font-size: 30px;
-    padding: 20px;
+    padding: 25px;
+    font-weight: 500;
 }
 
 
